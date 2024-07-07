@@ -1,0 +1,12 @@
+<h1>Games</h1>
+<%= form_tag games_path, method: :post do %>
+  <%= submit_tag "New Game" %>
+<% end %>
+
+<% @games.each do |game| %>
+  <div class="game-list">
+    <span><%= game.name %></span>
+    <span><%= game.start_at %></span>
+    <span><%= link_to 'Show', game_path(game) %></span>
+  </div>
+<% end %>
