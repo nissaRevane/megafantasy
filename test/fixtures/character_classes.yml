@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  charisma: 1
+  intelligence: 1
+  stealth: 1
+  dexterity: 1
+  constitution: 1
+  speed: 1
+  strenght: 1
+  mana: 1
+  salary: 1
+  effect: MyString
+
+two:
+  name: MyString
+  charisma: 1
+  intelligence: 1
+  stealth: 1
+  dexterity: 1
+  constitution: 1
+  speed: 1
+  strenght: 1
+  mana: 1
+  salary: 1
+  effect: MyString

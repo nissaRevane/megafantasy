@@ -8,10 +8,10 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(name: "Game #{Time.zone.now.to_i}", start_at: Time.zone.now)
+    name = "Game #{Time.zone.now.strftime('%Y%m%d%H%M%S')}"
+    @game = Game.new(name: , start_at: Time.zone.now)
 
     redirect_to(game_path(@game.id)) and return if @game.save
-
     redirect_to games_path
   end
 end
