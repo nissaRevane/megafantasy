@@ -1,12 +1,16 @@
-<h1>Games</h1>
-<%= form_tag games_path, method: :post do %>
-  <%= submit_tag "New Game" %>
-<% end %>
-
-<% @games.each do |game| %>
-  <div class="game-list">
-    <span><%= game.name %></span>
-    <span><%= game.start_at %></span>
-    <span><%= link_to 'Show', game_path(game) %></span>
+<div class="games-index row">
+  <div class="megafantasy-homepage col-md-6">
+    <div>
+      <h1>Megafantasy</h1>
+      <%= form_tag games_path, method: :post do %>
+        <%= submit_tag "New Game", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   </div>
-<% end %>
+
+  <div class="game-list col-md-6">
+    <% @games.each do |game| %>
+      <%= render partial: "games/index/game_card", locals: { game: game } %>
+    <% end %>
+  </div>
+</div>

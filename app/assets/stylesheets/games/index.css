@@ -1,0 +1,22 @@
+@import "index/_game_card.css";
+
+.games-index {
+  height: 94vh;
+  margin-top: 3vh;
+}
+
+.megafantasy-homepage {
+  background-color: purple;
+  padding: 5px;
+  border-radius: 18px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.megafantasy-homepage h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}

@@ -6,8 +6,10 @@
   <%= submit_tag "New Player" %>
 <% end %>
 
-<% @game.players.each do |player| %>
-  <div class="player-list">
-    <span><%= player.name %></span>
-  </div>
-<% end %>
+<div cass="player-list">
+  <% @game.players.each do |player| %>
+    <div class="player-card">
+      <span><%= player.name %></span>
+    </div>
+  <% end %>
+</div>
