@@ -4,15 +4,15 @@
     <table>
       <tr>
         <th>Size: </th>
-        <td><%=player.size || "Waiting for race"%></td>
+        <td><%=player.size ? "#{player.size} cm" : "Waiting for race"%></td>
       </tr>
       <tr>
         <th>Weight:</th>
-        <td><%=player.weight || "Waiting for race"%></td>
+        <td><%=player.weight ? "#{player.weight} kg" : "Waiting for race"%></td>
       </tr>
       <tr>
-        <th>Wage: </th>
-        <td><%= player&.character_class&.wage || "Waiting for class" %></td>
+        <th>Salary: </th>
+        <td><%= player&.character_class&.salary || "Waiting for class" %></td>
       </tr>
       <tr>
         <th>Money: </th>
@@ -21,6 +21,24 @@
       <tr>
         <th>Life points: </th>
         <td><%= text_field_tag :life_point, player.life_point %></td>
+      </tr>
+      <tr>
+        <th>Fame: </th>
+        <td><%= text_field_tag :fame, player.fame %></td>
+      </tr>
+      <tr>
+        <th>Race</th>
+        <td><%= select_tag(
+          :character_race_id,
+          options_for_select(CharacterRace.all.map { |cr| [cr.name, cr.id] },player.character_race_id)
+        ) %></td>
+      </tr>
+      <tr>
+        <th>Class: </th>
+        <td><%= select_tag(
+          :character_class_id,
+          options_for_select(CharacterClass.all.map { |cc| [cc.name, cc.id] }, player.character_class_id)
+        ) %></td>
       </tr>
     </table>
     <%= submit_tag "Enregistrer", class: "btn btn-success" %>
