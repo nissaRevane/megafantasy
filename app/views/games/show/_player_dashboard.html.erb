@@ -40,6 +40,38 @@
           options_for_select(CharacterClass.all.map { |cc| [cc.name, cc.id] }, player.character_class_id)
         ) %></td>
       </tr>
+      <tr>
+        <th>Charisma: </th>
+        <td><%= (player&.character_race&.charisma || 0) + (player&.character_class&.charisma || 0) %></td>
+      </tr>
+      <tr>
+        <th>Intelligence: </th>
+        <td><%= (player&.character_race&.intelligence || 0) + (player&.character_class&.intelligence || 0) %></td>
+      </tr>
+      <tr>
+        <th>Stealth: </th>
+        <td><%= (player&.character_race&.stealth || 0) + (player&.character_class&.stealth || 0) %></td>
+      </tr>
+      <tr>
+        <th>Dexterity: </th>
+        <td><%= (player&.character_race&.dexterity || 0) + (player&.character_class&.dexterity || 0) %></td>
+      </tr>
+      <tr>
+        <th>Constitution: </th>
+        <td><%= (player&.character_race&.constitution || 0) + (player&.character_class&.constitution || 0) %></td>
+      </tr>
+      <tr>
+        <th>Speed: </th>
+        <td><%= (player&.character_race&.speed || 0) + (player&.character_class&.speed || 0) %></td>
+      </tr>
+      <tr>
+        <th>Strength: </th>
+        <td><%= (player&.character_race&.strength || 0) + (player&.character_class&.strength || 0) %></td>
+      </tr>
+      <tr>
+        <th>Mana: </th>
+        <td><%= (player&.character_race&.mana || 0) + (player&.character_class&.mana || 0) %></td>
+      </tr>
     </table>
     <%= submit_tag "Enregistrer", class: "btn btn-success" %>
   <% end %>
