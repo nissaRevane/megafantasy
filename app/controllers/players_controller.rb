@@ -1,11 +1,10 @@
 class PlayersController < ApplicationController
-  def create
-    @game = Game.find(params[:game_id])
-    redirect_to root_path and return unless @game
+  PERMIT_PARAMS = %i[name size weight money life_point character].freeze
+  def update
+    @player = Player.find(params[:id])
+    redirect_to root_path and return unless @player
 
-    player = Player.new(name: params[:name], game_id: params[:game_id])
-
-    redirect_to game_path(@game) and return if player.save
-    redirect_to game_path(@game), alert: player.errors.full_messages.join(', ')
+    @player.update!(**params.permit(PERMIT_PARAMS))
+    redirect_to game_path(@player.game_id)
   end
 end

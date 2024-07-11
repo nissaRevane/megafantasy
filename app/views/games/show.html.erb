@@ -1,15 +1,11 @@
-<h1><%= @game.name %> <%= link_to 'Back', games_path %></h1>
+<div class="games-show">
+  <h1>
+    <%= @game.name %>
+    <%= link_to 'Back', games_path, class: "btn btn-primary" %>
+  </h1>
 
-<%= form_tag "/players", method: :post do %>
-  <%= hidden_field_tag :game_id, @game.id %>
-  <%= text_field_tag :name %>
-  <%= submit_tag "New Player" %>
-<% end %>
-
-<div cass="player-list">
-  <% @game.players.each do |player| %>
-    <div class="player-card">
-      <span><%= player.name %></span>
-    </div>
-  <% end %>
+  <div class="players-dashboard row">
+    <%= render partial: "games/show/player_dashboard", locals: { player: @game.players.first } %>
+    <%= render partial: "games/show/player_dashboard", locals: { player: @game.players.last } %>
+  </div>
 </div>

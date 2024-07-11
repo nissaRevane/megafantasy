@@ -1,6 +1,8 @@
 @import "games/index.css";
+@import "games/show.css";
 
 body {
   background-color: #f0e0ff;
   font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  margin-top: 3vh;
 }
