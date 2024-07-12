@@ -8,6 +8,22 @@ class PlayersController < ApplicationController
     fame
     character_race_id
     character_class_id
+    charisma_learned
+    intelligence_learned
+    stealth_learned
+    dexterity_learned
+    constitution_learned
+    speed_learned
+    strength_learned
+    mana_learned
+    charisma_bonus
+    intelligence_bonus
+    stealth_bonus
+    dexterity_bonus
+    constitution_bonus
+    speed_bonus
+    strength_bonus
+    mana_bonus
   ].freeze
 
   def update

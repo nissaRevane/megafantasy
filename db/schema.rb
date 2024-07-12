@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_11_204704) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_12_040916) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -68,6 +68,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_11_204704) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "fame", default: 0
+    t.integer "charisma_learned", default: 0
+    t.integer "intelligence_learned", default: 0
+    t.integer "stealth_learned", default: 0
+    t.integer "dexterity_learned", default: 0
+    t.integer "constitution_learned", default: 0
+    t.integer "speed_learned", default: 0
+    t.integer "strength_learned", default: 0
+    t.integer "mana_learned", default: 0
+    t.integer "charisma_bonus", default: 0
+    t.integer "intelligence_bonus", default: 0
+    t.integer "stealth_bonus", default: 0
+    t.integer "dexterity_bonus", default: 0
+    t.integer "constitution_bonus", default: 0
+    t.integer "speed_bonus", default: 0
+    t.integer "strength_bonus", default: 0
+    t.integer "mana_bonus", default: 0
     t.index ["character_class_id"], name: "index_players_on_character_class_id"
     t.index ["character_race_id"], name: "index_players_on_character_race_id"
     t.index ["game_id"], name: "index_players_on_game_id"
